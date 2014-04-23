@@ -58,4 +58,5 @@ har.data <- har.data[, matches]
 har.summary.data <- aggregate(har.data[4:ncol(har.data)], by=list(subject=har.data$subject, 
                                                                   activity_code=har.data$activity_code), FUN=mean, na.rm=T)
 
-
+# clean up temp objects:
+rm(subject_test, subject_train, test, train, X_test, X_train, y_test, y_train, activity_desc, feature.labels, fileurl, matches)
