@@ -1,71 +1,93 @@
-The following data are adapted from [Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+The following data are adapted from [Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).  The experiment, performed by Reyes-Ortiz, et.al., captured data from 30 human subjects (between ages 19-48) performing a variety of activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) while wearing a smartphone (Samsung Galaxy S II) on the waist. Data were captured using the phone's embedded accelerometer and gyroscope, at a sampling rate of 50Hz.
 
-* subject: int
-* activity_code: int
-* activity_desc: factor
-* tBodyAcc-mean()-X: numeric
-* tBodyAcc-mean()-Y: numeric
-* tBodyAcc-mean()-Z: numeric
-* tBodyAcc-std()-X: numeric
-* tBodyAcc-std()-Y: numeric
-* tBodyAcc-std()-Z: numeric
-* tGravityAcc-mean()-X: numeric
-* tGravityAcc-mean()-Y: numeric
-* tGravityAcc-mean()-Z: numeric
-* tGravityAcc-std()-X: numeric
-* tGravityAcc-std()-Y: numeric
-* tGravityAcc-std()-Z: numeric
-* tBodyAccJerk-mean()-X: numeric
-* tBodyAccJerk-mean()-Y: numeric
-* tBodyAccJerk-mean()-Z: numeric
-* tBodyAccJerk-std()-X: numeric
-* tBodyAccJerk-std()-Y: numeric
-* tBodyAccJerk-std()-Z: numeric
-* tBodyGyro-mean()-X: numeric
-* tBodyGyro-mean()-Y: numeric
-* tBodyGyro-mean()-Z: numeric
-* tBodyGyro-std()-X: numeric
-* tBodyGyro-std()-Y: numeric
-* tBodyGyro-std()-Z: numeric
-* tBodyGyroJerk-mean()-X: numeric
-* tBodyGyroJerk-mean()-Y: numeric
-* tBodyGyroJerk-mean()-Z: numeric
-* tBodyGyroJerk-std()-X: numeric
-* tBodyGyroJerk-std()-Y: numeric
-* tBodyGyroJerk-std()-Z: numeric
-* tBodyAccMag-mean(): numeric
-* tBodyAccMag-std(): numeric
-* tGravityAccMag-mean(): numeric
-* tGravityAccMag-std(): numeric
-* tBodyAccJerkMag-mean(): numeric
-* tBodyAccJerkMag-std(): numeric
-* tBodyGyroMag-mean(): numeric
-* tBodyGyroMag-std(): numeric
-* tBodyGyroJerkMag-mean(): numeric
-* tBodyGyroJerkMag-std(): numeric
-* fBodyAcc-mean()-X: numeric
-* fBodyAcc-mean()-Y: numeric
-* fBodyAcc-mean()-Z: numeric
-* fBodyAcc-std()-X: numeric
-* fBodyAcc-std()-Y: numeric
-* fBodyAcc-std()-Z: numeric
-* fBodyAccJerk-mean()-X: numeric
-* fBodyAccJerk-mean()-Y: numeric
-* fBodyAccJerk-mean()-Z: numeric
-* fBodyAccJerk-std()-X: numeric
-* fBodyAccJerk-std()-Y: numeric
-* fBodyAccJerk-std()-Z: numeric
-* fBodyGyro-mean()-X: numeric
-* fBodyGyro-mean()-Y: numeric
-* fBodyGyro-mean()-Z: numeric
-* fBodyGyro-std()-X: numeric
-* fBodyGyro-std()-Y: numeric
-* fBodyGyro-std()-Z: numeric
-* fBodyAccMag-mean(): numeric
-* fBodyAccMag-std(): numeric
-* fBodyBodyAccJerkMag-mean(): numeric
-* fBodyBodyAccJerkMag-std(): numeric
-* fBodyBodyGyroMag-mean(): numeric
-* fBodyBodyGyroMag-std(): numeric
-* fBodyBodyGyroJerkMag-mean(): numeric
-* fBodyBodyGyroJerkMag-std(): numeric
+The original data set contains 563 variables which have been culled to 68, including "subject", "activity-code", and all variables pertaining to measurements of mean and standard deviation (identified by "-mean" and "-std" in their labels, respectively). An additional variable, "activity-desc", has been added to the original data; it provides human-readable descriptions of the activities encoded in "activity-code"
+
+The following are keys to interpreting the naming conventions of the variables:
+
+**t**: time domain signals      
+**f**: frequency domain signals    
+**Acc**: accelerometer measurements  
+**Gyro**: gyroscope measurements  
+**-X**,**-Y**,**-Z**: measurements captured along the x, y and z axis  
+**Body**: body motion component of sensor signal  
+**Gravity**: gravity component of sensor signal  
+**Jerk**: jerk calculated from linear acceleration and angular velocity  
+**Mag**: magnitude of signal  
+
+variables that were estimated from these signals:  
+
+**mean()**: Mean value  
+**std()**: Standard deviation  
+
+### Variables
+All variables are of type numeric, except where noted otherwise
+
+* subject           [type=int] : subject identifier
+* activity_code     [type=int] : 1=WALKING, 2=WALKING_UPSTAIRS, 3=WALKING_DOWNSTAIRS, 4=SITTING, 5=STANDING, 6=LAYING 
+* activity_desc     [type=factor] : 6 levels (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+* tBodyAcc-mean()-X
+* tBodyAcc-mean()-Y
+* tBodyAcc-mean()-Z
+* tBodyAcc-std()-X
+* tBodyAcc-std()-Y
+* tBodyAcc-std()-Z
+* tGravityAcc-mean()-X
+* tGravityAcc-mean()-Y
+* tGravityAcc-mean()-Z
+* tGravityAcc-std()-X
+* tGravityAcc-std()-Y
+* tGravityAcc-std()-Z
+* tBodyAccJerk-mean()-X
+* tBodyAccJerk-mean()-Y
+* tBodyAccJerk-mean()-Z
+* tBodyAccJerk-std()-X
+* tBodyAccJerk-std()-Y
+* tBodyAccJerk-std()-Z
+* tBodyGyro-mean()-X
+* tBodyGyro-mean()-Y
+* tBodyGyro-mean()-Z
+* tBodyGyro-std()-X
+* tBodyGyro-std()-Y
+* tBodyGyro-std()-Z
+* tBodyGyroJerk-mean()-X
+* tBodyGyroJerk-mean()-Y
+* tBodyGyroJerk-mean()-Z
+* tBodyGyroJerk-std()-X
+* tBodyGyroJerk-std()-Y
+* tBodyGyroJerk-std()-Z
+* tBodyAccMag-mean()
+* tBodyAccMag-std()
+* tGravityAccMag-mean()
+* tGravityAccMag-std()
+* tBodyAccJerkMag-mean()
+* tBodyAccJerkMag-std()
+* tBodyGyroMag-mean()
+* tBodyGyroMag-std()
+* tBodyGyroJerkMag-mean()
+* tBodyGyroJerkMag-std()
+* fBodyAcc-mean()-X
+* fBodyAcc-mean()-Y
+* fBodyAcc-mean()-Z
+* fBodyAcc-std()-X
+* fBodyAcc-std()-Y
+* fBodyAcc-std()-Z
+* fBodyAccJerk-mean()-X
+* fBodyAccJerk-mean()-Y
+* fBodyAccJerk-mean()-Z
+* fBodyAccJerk-std()-X
+* fBodyAccJerk-std()-Y
+* fBodyAccJerk-std()-Z
+* fBodyGyro-mean()-X
+* fBodyGyro-mean()-Y
+* fBodyGyro-mean()-Z
+* fBodyGyro-std()-X
+* fBodyGyro-std()-Y
+* fBodyGyro-std()-Z
+* fBodyAccMag-mean()
+* fBodyAccMag-std()
+* fBodyBodyAccJerkMag-mean()
+* fBodyBodyAccJerkMag-std()
+* fBodyBodyGyroMag-mean()
+* fBodyBodyGyroMag-std()
+* fBodyBodyGyroJerkMag-mean()
+* fBodyBodyGyroJerkMag-std()
