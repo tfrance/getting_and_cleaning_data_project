@@ -2,7 +2,7 @@
 ---
 This project contains the following files:
 
-**run_analysis.R**: This script creates a tidy data set adapted from [Human Activity Recognition Using Smartphones](http://http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The original data can be found [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). The script performs the following transformations:
+**run_analysis.R**: This script creates a tidy data set adapted from [Human Activity Recognition Using Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The original data can be found [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). The script performs the following transformations:
 * Downloads the original data set and unzips it into a data directory ("./data/har.zip")
 * Concatenates the subject, activity-code, and data from each data set
 * Merges the training and test sets into a single data set ("har.data")
